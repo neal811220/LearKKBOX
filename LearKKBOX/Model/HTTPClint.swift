@@ -48,7 +48,7 @@ enum KKHTTPHeaderValue: String {
     
     case xwww = "application/x-www-form-urlencoded"
     
-    case brarer = "Bearer"
+    case bearer = "Bearer"
 }
 // MARK: - Navigation
 protocol KKRequest {
@@ -66,7 +66,7 @@ extension KKRequest {
   // MARK: - Navigation
     func makeRequest() -> URLRequest {
 
-        let urlString = "https://api.kkbox.com/v1.1/new-hits-playlists/playlist_id/tracks"
+        let urlString = url
         
         let url = URL(string: urlString)!
 

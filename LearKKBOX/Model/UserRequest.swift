@@ -27,7 +27,7 @@ enum KKUserRequest: KKRequest {
             
         case .getPlaylist(let token):
             
-            return [KKHTTPHeaderField.auth.rawValue: KKHTTPHeaderValue.brarer.rawValue + " \(token)"]
+            return [KKHTTPHeaderField.auth.rawValue: KKHTTPHeaderValue.bearer.rawValue + " \(token)"]
         }
     }
     // MARK: - Navigation
@@ -61,9 +61,9 @@ enum KKUserRequest: KKRequest {
         
         switch self {
             
-        case .getToken: return "https://account.kkbox.com/oauth2/token HTTP/1.1"
+        case .getToken: return "https://account.kkbox.com/oauth2/token"
         
-        case .getPlaylist: return "https://api.kkbox.com/v1.1/new-hits-playlists/playlist_id/tracks"
+        case .getPlaylist: return "https://api.kkbox.com/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?territory=TW&limit=3"
         }
     }
     

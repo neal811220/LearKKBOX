@@ -25,3 +25,51 @@ struct UserData: Codable {
         case expiresIn = "expires_in"
     }
 }
+
+struct Playlist: Codable {
+    
+    let data: [songDetail]
+    
+    let paging: Paging
+    
+    let summary: Summary
+}
+
+struct songDetail: Codable {
+    
+    let id: String
+    
+    let name: String
+    
+    let duration: Int
+    
+    let url: String
+    
+    let trackNumber: Int
+    
+    let explicitness: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case id, name, duration, url, explicitness
+        
+        case trackNumber = "track_number"
+    }
+}
+
+struct Paging: Codable {
+    
+    let offset: Int
+    
+    let limit: Int
+    
+    let previous: Int?
+    
+    let next: String?
+}
+
+struct Summary: Codable {
+    
+    let total: Int
+}
+

@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     
     let userProvider = UserProvider()
     
+    var playList: Playlist?
+    
     @IBOutlet weak var kkTableView: UITableView!
     
     override func viewDidLoad() {
@@ -38,11 +40,11 @@ class ViewController: UIViewController {
         
         kkTableView.contentInsetAdjustmentBehavior = .never
 
-//        getUserToken()
+        getUserToken()
         
         setHerderView()
         
-        
+        getPlaylist()
         // Do any additional setup after loading the view.
     }
     
@@ -67,8 +69,25 @@ class ViewController: UIViewController {
     }
     
     func getPlaylist() {
+        
         let userToken = UserInfoManager.shared.getUserId()
         
+        userProvider.getPlaylist(userToken: userToken) { (result) in
+            switch result {
+                
+            case .success(let data):
+                
+                self.playList = data
+                
+                print(data)
+                
+                print("success")
+                
+            case .failure(let error):
+                
+                print(error)
+            }
+        }
     }
 }
 
