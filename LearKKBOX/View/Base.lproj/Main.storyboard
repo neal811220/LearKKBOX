@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LearKKBOX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RJ9-fo-CwZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="uZh-qE-Axk" customClass="KKTableViewCell" customModule="LearKKBOX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZh-qE-Axk" id="le0-O9-e2D">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fhJ-BX-2H0">
+                                                    <rect key="frame" x="20" y="10" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="1jp-zu-5nq"/>
+                                                        <constraint firstAttribute="width" constant="80" id="eb8-tI-ivu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qre-Jj-WZa">
+                                                    <rect key="frame" x="120" y="40" width="234" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e33-7O-eg4">
+                                                    <rect key="frame" x="374" y="40" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="e33-7O-eg4" secondAttribute="height" multiplier="1:1" id="4Q4-Uz-tUu"/>
+                                                        <constraint firstAttribute="height" constant="20" id="di7-IN-sBO"/>
+                                                    </constraints>
+                                                    <state key="normal" image="heart"/>
+                                                    <connections>
+                                                        <action selector="tapHeartButton:" destination="uZh-qE-Axk" eventType="touchUpInside" id="FMS-Wn-9sd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qre-Jj-WZa" firstAttribute="leading" secondItem="fhJ-BX-2H0" secondAttribute="trailing" constant="20" id="54Z-XM-fXp"/>
+                                                <constraint firstAttribute="bottom" secondItem="fhJ-BX-2H0" secondAttribute="bottom" constant="10" id="8S3-g3-I3P"/>
+                                                <constraint firstItem="e33-7O-eg4" firstAttribute="leading" secondItem="qre-Jj-WZa" secondAttribute="trailing" constant="20" id="Ikj-kV-HoZ"/>
+                                                <constraint firstItem="fhJ-BX-2H0" firstAttribute="top" secondItem="le0-O9-e2D" secondAttribute="top" constant="10" id="KIt-33-3XA"/>
+                                                <constraint firstItem="fhJ-BX-2H0" firstAttribute="leading" secondItem="le0-O9-e2D" secondAttribute="leading" constant="20" id="TTf-U9-Mcn"/>
+                                                <constraint firstAttribute="trailing" secondItem="e33-7O-eg4" secondAttribute="trailing" constant="20" id="VpX-Ts-lvg"/>
+                                                <constraint firstItem="qre-Jj-WZa" firstAttribute="centerY" secondItem="le0-O9-e2D" secondAttribute="centerY" id="WKA-tx-sRS"/>
+                                                <constraint firstItem="e33-7O-eg4" firstAttribute="centerY" secondItem="le0-O9-e2D" secondAttribute="centerY" id="yu8-PC-PoB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="heartButton" destination="e33-7O-eg4" id="8sS-ik-3xy"/>
+                                            <outlet property="kkImage" destination="fhJ-BX-2H0" id="Aip-xE-QO0"/>
+                                            <outlet property="nemeLabel" destination="qre-Jj-WZa" id="0AJ-j5-9c6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RJ9-fo-CwZ" secondAttribute="trailing" id="O7e-l1-8Pt"/>
+                            <constraint firstItem="RJ9-fo-CwZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="gcb-6X-ze5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RJ9-fo-CwZ" secondAttribute="bottom" id="nkI-5q-0EZ"/>
+                            <constraint firstItem="RJ9-fo-CwZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pPh-0W-HLx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="kkTableView" destination="RJ9-fo-CwZ" id="Fcu-lk-NXW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" width="32" height="32"/>
+    </resources>
+</document>
