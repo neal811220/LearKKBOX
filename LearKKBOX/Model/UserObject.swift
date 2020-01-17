@@ -28,14 +28,14 @@ struct UserData: Codable {
 
 struct Playlist: Codable {
     
-    let data: [songDetail]
+    let data: [SongDetail]
     
     let paging: Paging
     
     let summary: Summary
 }
 
-struct songDetail: Codable {
+struct SongDetail: Codable {
     
     let id: String
     
@@ -49,11 +49,17 @@ struct songDetail: Codable {
     
     let explicitness: Bool
     
+    let availableTerritories: [String]
+    
+    let album: Album
+    
     enum CodingKeys: String, CodingKey {
         
-        case id, name, duration, url, explicitness
+        case id, name, duration, url, explicitness, album
         
         case trackNumber = "track_number"
+        
+        case availableTerritories = "available_territories"
     }
 }
 
@@ -72,4 +78,63 @@ struct Summary: Codable {
     
     let total: Int
 }
+
+struct Album: Codable {
+    
+    let id: String
+    
+    let name: String
+    
+    let url: String
+    
+    let explicitness: Bool
+    
+    let availableTerritories: [String]
+    
+    let releaseDate: String
+    
+    let images: [Images]
+    
+    let artist: Artist
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case id, name, url, explicitness, images, artist
+        
+        case availableTerritories = "available_territories"
+        
+        case releaseDate = "release_date"
+    }
+}
+
+struct Images: Codable {
+    
+    let height: Int
+    
+    let width: Int
+    
+    let url: String
+}
+
+struct Artist: Codable {
+    
+    let id: String
+    
+    let name: String
+    
+    let url: String
+    
+    let images: [SongImage]
+}
+
+struct SongImage: Codable {
+    
+    let height: Int
+    
+    let width: Int
+    
+    let url: String
+}
+
+
 

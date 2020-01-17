@@ -40,7 +40,7 @@ class UserProvider {
         }
     }
     
-    func getPlaylist(userToken: String, completion: @escaping (Result<Playlist>) -> Void) {
+    func getPlaylist(userToken: String, completion: @escaping (Result<[SongDetail]>) -> Void) {
         
         HTTPClient.shared.request(KKUserRequest.getPlaylist(token: userToken)) { (result) in
             
@@ -51,11 +51,12 @@ class UserProvider {
                    
                     let json = try JSONDecoder().decode(Playlist.self, from: data)
                     
+                    let playData = json.data
                     print(json)
                     
                     print(data)
                     
-                    completion(Result.success(json))
+                    completion(Result.success(playData))
                     
                 } catch {
                     

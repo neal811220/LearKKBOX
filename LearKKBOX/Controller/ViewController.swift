@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     let userProvider = UserProvider()
     
-    var playList: Playlist?
+    var playList = [SongDetail]()
     
     @IBOutlet weak var kkTableView: UITableView!
     
@@ -78,7 +78,9 @@ class ViewController: UIViewController {
             case .success(let data):
                 
                 self.playList = data
-                
+                DispatchQueue.main.async {
+                    self.kkTableView.reloadData()
+                }
                 print(data)
                 
                 print("success")
@@ -94,15 +96,20 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return playList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? KKTableViewCell else { return UITableViewCell() }
-        cell.kkImage.image = UIImage(named: "song")
-        cell.nemeLabel.text = "LoveSong"
-        
-        return cell
+        if playList == nil {
+            cell.kkImage.image = UIImage(named: "song")
+            cell.nemeLabel.text = "LoveSong"
+            return cell
+        } else {
+            cell.kkImage.loadImage(urlString: playList[indexPath.row].album.images[indexPath.row].url)
+            cell.nemeLabel.text = playList[indexPath.row].name
+            return cell
+        }
     }
 }
 
