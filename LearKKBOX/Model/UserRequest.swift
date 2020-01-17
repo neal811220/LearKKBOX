@@ -63,7 +63,7 @@ enum KKUserRequest: KKRequest {
             
         case .getToken: return "https://account.kkbox.com/oauth2/token"
         
-        case .getPlaylist: return "https://api.kkbox.com/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?territory=TW&limit=3"
+        case .getPlaylist: return "https://api.kkbox.com/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?territory=TW"
         }
     }
     

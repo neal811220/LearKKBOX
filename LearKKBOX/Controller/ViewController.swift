@@ -106,7 +106,7 @@ extension ViewController: UITableViewDataSource {
             cell.nemeLabel.text = "LoveSong"
             return cell
         } else {
-            cell.kkImage.loadImage(urlString: playList[indexPath.row].album.images[indexPath.row].url)
+            cell.kkImage.loadImage(urlString: playList[indexPath.row].album.images[0].url)
             cell.nemeLabel.text = playList[indexPath.row].name
             return cell
         }
