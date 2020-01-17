@@ -20,6 +20,7 @@
 		18F36D0223D1659B0015DE5A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F36D0123D1659B0015DE5A /* Parser.swift */; };
 		18F36D0423D18B7C0015DE5A /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F36D0323D18B7C0015DE5A /* UserObject.swift */; };
 		18F36D0623D1906B0015DE5A /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F36D0523D1906B0015DE5A /* UserInfoManager.swift */; };
+		D062AE0B677B62E6A319FF78 /* Pods_LearKKBOX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC631324F83084F6B3979D8 /* Pods_LearKKBOX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		18F36D0123D1659B0015DE5A /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		18F36D0323D18B7C0015DE5A /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		18F36D0523D1906B0015DE5A /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		59834285473EFD6F7C3A3CBC /* Pods-LearKKBOX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearKKBOX.release.xcconfig"; path = "Target Support Files/Pods-LearKKBOX/Pods-LearKKBOX.release.xcconfig"; sourceTree = "<group>"; };
+		CAC631324F83084F6B3979D8 /* Pods_LearKKBOX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearKKBOX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5FCCC00BFF56FDB85337DB7 /* Pods-LearKKBOX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearKKBOX.debug.xcconfig"; path = "Target Support Files/Pods-LearKKBOX/Pods-LearKKBOX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D062AE0B677B62E6A319FF78 /* Pods_LearKKBOX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				18F36CDE23D148DB0015DE5A /* LearKKBOX */,
 				18F36CDD23D148DB0015DE5A /* Products */,
+				28A6C15184D37BBCB64DE6E7 /* Pods */,
+				3ABA10051772EE0437570AD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +127,24 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		28A6C15184D37BBCB64DE6E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5FCCC00BFF56FDB85337DB7 /* Pods-LearKKBOX.debug.xcconfig */,
+				59834285473EFD6F7C3A3CBC /* Pods-LearKKBOX.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3ABA10051772EE0437570AD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAC631324F83084F6B3979D8 /* Pods_LearKKBOX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F36CF023D148DC0015DE5A /* Build configuration list for PBXNativeTarget "LearKKBOX" */;
 			buildPhases = (
+				C87C902FCF1155CC5C017B08 /* [CP] Check Pods Manifest.lock */,
 				18F36CD823D148DB0015DE5A /* Sources */,
 				18F36CD923D148DB0015DE5A /* Frameworks */,
 				18F36CDA23D148DB0015DE5A /* Resources */,
+				146E4EA05FCE8F786AEB0ED6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +212,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		146E4EA05FCE8F786AEB0ED6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearKKBOX/Pods-LearKKBOX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearKKBOX/Pods-LearKKBOX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearKKBOX/Pods-LearKKBOX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C87C902FCF1155CC5C017B08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearKKBOX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18F36CD823D148DB0015DE5A /* Sources */ = {
@@ -342,6 +411,7 @@
 		};
 		18F36CF123D148DC0015DE5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5FCCC00BFF56FDB85337DB7 /* Pods-LearKKBOX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,6 +430,7 @@
 		};
 		18F36CF223D148DC0015DE5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59834285473EFD6F7C3A3CBC /* Pods-LearKKBOX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
